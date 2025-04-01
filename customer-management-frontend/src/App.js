@@ -34,7 +34,7 @@ function App() {
 
     useEffect(() => {
         if (authToken) {
-            fetch('http://10.63.20.68:5000/customers', {
+            fetch('http://13.233.22.78:5000/customers', {
                 headers: {
                     Authorization: `Bearer ${authToken}`,
                 },
@@ -46,7 +46,7 @@ function App() {
     }, [authToken]);
 
     const handleLogin = async () => {
-        const response = await fetch('http://10.63.20.68:5001/login', {
+        const response = await fetch('http://13.233.22.78:5001/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password }),
@@ -64,7 +64,7 @@ function App() {
     };
 
     const handleSignup = async () => {
-        const response = await fetch('http://10.63.20.68:5001/register', {
+        const response = await fetch('http://13.233.22.78:5001/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password }),
@@ -86,7 +86,7 @@ function App() {
     };
 
     const addCustomer = async () => {
-        const response = await fetch('http://10.63.20.68:5000/customers', {
+        const response = await fetch('http://13.233.22.78:5000/customers', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ function App() {
     };
 
     const deleteCustomer = async (id) => {
-        const response = await fetch(`http://10.63.20.68:5000/customers/${id}`, {
+        const response = await fetch(`http://13.233.22.78:5000/customers/${id}`, {
             method: 'DELETE',
             headers: {
                 Authorization: `Bearer ${authToken}`,
@@ -111,7 +111,7 @@ function App() {
     };
 
     const editCustomer = async (id) => {
-        const response = await fetch(`http://10.63.20.68:5000/customers/${id}`, {
+        const response = await fetch(`http://13.233.22.78:5000/customers/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
